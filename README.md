@@ -11,7 +11,7 @@ Tested under Alpine Linux 3.4.4
 
 # How-to use
 ```sh
-./befunge < hoge.bf
+./befunge hoge.bf
 ```
 
 # Limitations
