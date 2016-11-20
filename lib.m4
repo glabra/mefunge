@@ -13,7 +13,8 @@ dnl   returns ASCII code point
 dnl   not destructive
 define({-literal2int-}, {-dnl
 ifelse({-$1-},{- -},32,dnl
-{-index({-                                 !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ -},{-$1-})-})-})
+{-index({- 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ-},{-$1-})-})-})
 
 dnl stack_reverse(from, to):
 dnl   reverse pushdef stack

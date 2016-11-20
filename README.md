@@ -19,6 +19,7 @@ Tested under Alpine Linux 3.4.4
 - operator `,` is replaced with `;` due to m4's obfuscated syntax.
 - source file must not contain `{-` or `,` character sequence.
 - `,` in source file is replaced into `;` by wrapper script.
+- modify program (`p`) with `null` or characters which is not in extended-ASCII is not supported.
 - noeol file is not supported. This is wrapper script's limitation.
 
 # License
