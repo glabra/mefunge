@@ -344,6 +344,9 @@ dnl evaluation(program_matrix_name, status_var, stack_var)
 define({-evaluation-}, {-
     pick_matrix({-$1-}, get_position(), {-program_char-})
 
+dnl divert(0)dnl
+dnl defn({-program_char-})/get_position()/stack_peek({-__env_stack-})
+dnl divert(-1)
     ifelse(
     defn({-program_char-}), {--},
         ,

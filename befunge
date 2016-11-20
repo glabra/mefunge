@@ -21,6 +21,7 @@ width=$(wc -L < "${1}")
 height=$(wc -l < "${1}")
 
 (cat "${1}" | \
+    tr ',' ';' | \
     sed "s/^/pushdef(${Q_S}prg${Q_E},${Q_S}/" | \
     sed "s/$/${Q_E})/" \
 ) > "${prglist}"
