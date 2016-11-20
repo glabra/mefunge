@@ -11,13 +11,15 @@ Tested under Alpine Linux 3.4.4
 
 # How-to use
 ```sh
-./befunge < [befunge source file]
+./befunge < hoge.bf
 ```
 
-# Limitation
+# Limitations
 - `&`, `~`, and `?` operators are not implemented.
-- source file must not contain `{-` character sequence.
 - operator `,` is replaced with `;` due to m4's obfuscated syntax.
+- source file must not contain `{-` or `,` character sequence.
 - `,` in source file is replaced into `;` by wrapper script.
 - noeol file is not supported. This is wrapper script's limitation.
 
+# License
+MIT License. For detail, see `LICENSE`.
