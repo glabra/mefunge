@@ -110,10 +110,8 @@ define({-__eval_module_control-}, {-
         {-set_direction(1, 0)-},
     {-$1-}, {-^-},
         {-set_direction(0, -1)-},
-    {-$1-}, {-v-},
-        {-set_direction(0, 1)-},
-    dnl default
-        {--})
+    dnl {-$1-}, {-v-},
+        {-set_direction(0, 1)-})
 -})
 
 dnl __eval_module_branch(program_char, stack_name)
@@ -197,8 +195,19 @@ divert(-1)
 dnl __eval_module_input(program_char, stack_name)
 dnl char: &~
 define({-__eval_module_input-}, {-
-errprint({-FIXME: `$1' is not implemented. pushing `0' into the stack.-})
-pushdef({-$2-}, 0)
+divert(0)
+ifelse({-$1-}, {-&-},
+    {-int (^D^D to commit)>-},
+    {-char (^D^D to commit)>-})
+divert(-1)
+pushdef({-raw_char-}, include({-/dev/stdin-}))
+ifelse(defn({-raw_char-}, {--},
+    {-define({-raw_char-}, {-0-})-}, {--}))
+ifelse({-$1-}, {-&-},
+    {-pushdef({-$2-}, defn({-raw_char-}))-},
+    {-pushdef({-$2-}, literal2int(defn({-raw_char-})))-})
+divert(0)
+divert(-1)
 -})
 
 dnl __eval_module_modifyStack(program_char, stack_name)

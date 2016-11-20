@@ -15,7 +15,7 @@ Tested under Alpine Linux 3.4.4
 ```
 
 # Limitations
-- `&`, `~`, and `?` operators are not implemented.
+- `?` operators is not implemented.
 - operator `,` is replaced with `;` due to m4's obfuscated syntax.
 - source file must not contain `{-` or `,` character sequence.
 - `,` in source file is replaced into `;` by wrapper script.
