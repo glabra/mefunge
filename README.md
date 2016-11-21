@@ -16,11 +16,13 @@ Tested under Alpine Linux 3.4.4
 
 # Limitations
 - `?` operators is not implemented.
+- `~` cannot parse more than 1 characters.
 - operator `,` is replaced with `;` due to m4's obfuscated syntax.
-- source file must not contain `{-` or `,` character sequence.
+- program must not contain `{-` or `,` character sequence.
 - `,` in source file is replaced into `;` by wrapper script.
 - modify program (`p`) with `null` or characters which is not in extended-ASCII is not supported.
-- noeol file is not supported. This is wrapper script's limitation.
+- noeol file is not supported. This is wrapper script's bug.
+- source file must not contain `?`. This is wrapper script's bug.
 
 # License
 MIT License. For detail, see `LICENSE`.
